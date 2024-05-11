@@ -30,6 +30,8 @@
         m_arr: m_arr {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
             bindings
                 = <&macro_tap &kp EQUAL>,
                 <&macro_press &kp LSHFT>,
@@ -41,6 +43,8 @@
         m_copy: m_copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
             bindings
                 = <&macro_press &kp LCTRL>,
                 <&macro_tap &kp C>,
@@ -51,6 +55,8 @@
         m_paste: m_paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
             bindings
                 = <&macro_press &kp LCTRL>,
                 <&macro_tap &kp V>,
@@ -78,7 +84,7 @@
                         &kp LGUI &kp LGUI &kp LALT   &lt NUM ESC  &kp LSHFT           &lt NUM SPACE  &lt NAV BSPC &kp RALT  &kp RALT  &kp BSLH
             >;
 
-            sensor-bindings = <&inc_dec_kp &m_copy &m_paste &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp &kp LC(C) &kp LC(V) &inc_dec_kp PG_UP PG_DN>;
         };
 
         num_layer {
