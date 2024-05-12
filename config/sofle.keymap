@@ -78,6 +78,19 @@
                 <&macro_release &kp LSHFT>
                 ;
         };
+
+        m_sel: m_sel {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>,
+                <&macro_tap &kp LEFT>,
+                <&macro_press &kp LSHFT>,
+                <&macro_tap &kp RIGHT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp LCTRL>
+                ;
+        };
     };
 
     keymap {
@@ -99,7 +112,7 @@
                         &kp LGUI &kp LGUI &kp LALT   &lt NUM ESC  &mt LSHFT SPACE     &lt NUM SPACE  &lt NAV BSPC &kp RALT  &lt EXTRA K_APP  &kp BSLH
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(C) LC(V) &inc_dec_kp K_VOL_UP K_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp LC(C) LC(V) &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         num_layer {
@@ -112,11 +125,11 @@
 // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
 //               |     |      |      |      |        |  |       |      |       |       |      |
             bindings = <
-&trans     &kp LG(N1)  &kp LG(N2) &kp LG(N3)  &kp LG(N4) &kp LG(N5)                    &kp F6    &kp F7   &kp F8  &kp F9  &kp F10      &kp F11
-&kp GRAVE  &m_arr      &trans     &kp RBKT    &kp RPAR   &kp RBRC                      &kp N6    &kp N7   &kp N8  &kp N9  &kp KP_MINUS &kp F12
-&trans     &kp EXCL    &kp AT     &kp LBKT    &kp LPAR   &kp LBRC                      &kp CARET &kp N4   &kp N5  &kp N6  &kp N0       &kp KP_PLUS
-&trans     &trans      &kp LA(X)  &kp LA(C)   &kp LA(V)  &kp LA(B)  &trans   &trans    &kp LBKT  &kp N1   &kp N2  &kp N3  &kp BSLH     &trans
-                       &trans     &trans      &trans     &trans     &trans   &trans    &trans    &trans   &trans  &trans
+&kp PSCRN  &kp LG(N1)  &kp LG(N2) &kp LG(N3)  &kp LG(N4) &kp LG(N5)                    &kp F6        &kp F7   &kp F8  &kp F9  &kp F10       &kp F11
+&kp GRAVE  &m_arr      &trans     &kp RBKT    &kp RPAR   &kp RBRC                      &kp N6        &kp N7   &kp N8  &kp N9  &kp KP_MINUS  &kp F12
+&trans     &m_sel      &trans     &kp LBKT    &kp LPAR   &kp LBRC                      &kp KP_DOT    &kp N4   &kp N5  &kp N6  &kp N0        &kp KP_PLUS
+&trans     &trans      &kp LA(X)  &kp LA(C)   &kp LA(V)  &kp LA(B)  &trans   &trans    &kp KP_COMMA  &kp N1   &kp N2  &kp N3  &kp BSLH      &kp LA(F4)
+                       &trans     &trans      &trans     &trans     &trans   &trans    &trans        &trans   &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
@@ -131,11 +144,11 @@
 // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
 //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
-&trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                    &trans   &trans       &trans      &trans      &trans     &trans
-&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &kp RBRC                        &kp DEL  &kp HOME     &kp END     &kp PG_DN   &kp PG_UP  &trans
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp LBRC                        &kp LEFT &kp DOWN     &kp UP      &kp RIGHT   &kp RET    &kp BSPC
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &trans    &trans  &trans   &kp LC(LEFT) &kp LC(RIGHT)  &trans      &trans     &kp LC(BSPC)
-                        &trans       &trans       &trans       &trans        &trans    &trans  &trans   &kp LC(DEL)  &trans      &trans
+&trans     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &kp LG(N1)  &kp LG(N2)    &kp LG(N3)     &kp LG(N4)  &kp LG(N5) &kp LG(N6)
+&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &kp RBRC                          &kp DEL     &kp HOME      &kp END        &kp INSERT  &kp PG_DN  &kp PG_UP
+&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp LBRC                          &kp LEFT    &kp DOWN      &kp UP         &kp RIGHT   &kp RET    &kp LC(BSPC)
+&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &trans      &trans  &trans      &kp LC(LEFT)  &kp LC(RIGHT)  &trans      &trans     &kp LA(TAB)
+                        &trans       &trans       &trans       &trans        &trans      &trans  &trans      &kp LC(DEL)   &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -159,18 +172,12 @@
         };
 
         extra_layer {
-// ----------------------------------------------------------------------------------------------------------------------------
-// | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-// | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-// |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-// |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-//                    |         |         |         |         |         | |      |      |      |       |      |
             display-name = "extra";
             bindings = <
 &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &none   &none         &none      &none        &none &none
 &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                         &none   &none         &none      &none        &none &none
-&none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                   &none   &kp K_PREV    &kp K_PP   &kp K_NEXT   &none &none
-&none             &none           &none           &none           &none           &none            &none           &none  &none   &kp K_VOL_UP  &kp K_MUTE &kp K_VOL_DN &none &none
+&none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &kp A                                   &none   &kp C_PREV    &kp C_PP   &kp C_NEXT   &none &none
+&none             &none           &none           &none           &none           &none            &none           &none  &none   &kp C_VOL_UP  &kp C_MUTE &kp C_VOL_DN &none &none
                                   &none           &none           &none           &none            &none           &none  &none   &none         &none      &none
             >;
         };
