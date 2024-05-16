@@ -127,7 +127,7 @@
 &kp PSCRN   &kp LG(N1)  &kp LG(N2) &kp LG(N3)  &kp LG(N4) &kp LG(N5)                       &kp F6        &kp F7   &kp F8  &kp F9  &kp F10       &kp F11
 &kp LA(TAB) &m_arr      &m_tmpl    &kp RBKT    &kp RPAR   &kp RBRC                         &kp N6        &kp N7   &kp N8  &kp N9  &kp KP_MINUS  &kp F12
 &kp LC(Z)   &m_sel      &trans     &kp LBKT    &kp LPAR   &kp LBRC                         &kp KP_DOT    &kp N4   &kp N5  &kp N6  &kp N0        &kp KP_PLUS
-&kp LC(Y)   &kp LA(Z)   &kp LC(X)  &kp LC(C)   &kp LC(V)  &kp LA(B)  &trans      &trans    &kp KP_COMMA  &kp N1   &kp N2  &kp N3  &kp BSLH      &kp LA(F4)
+&kp LC(Y)   &kp LA(Z)   &kp LC(X)  &kp LC(C)   &kp LC(V)  &kp LA(B)  &trans      &trans    &kp KP_COMMA  &kp N1   &kp N2  &kp N3  &kp BSLH      &kp RA(F4)
                         &kp LA(X)  &kp LA(C)   &kp LA(V)  &trans     &trans      &trans    &trans        &trans   &trans  &trans
             >;
 
