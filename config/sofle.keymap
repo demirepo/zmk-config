@@ -60,9 +60,6 @@
                 <&macro_release &kp LCTRL>
                 ;
         };
-
-
-
     };
 
     behaviors {
@@ -85,7 +82,7 @@
         };
     };
 
-        combos {
+    combos {
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
@@ -101,16 +98,16 @@
             display-name = "default";
             bindings = <
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |   `             |  1         |  2      |  3        |  4        |  5          |                                 |  6         |  7        |  8             |  9   |   0   |           |
-    &hm N0 GRAVE        &fm F1 N1    &fm F2 N2 &fm F3 N3   &fm F4 N4   &fm F5 N5                                       &fm F6 N6    &fm F7 N7   &fm F8 N8        &fm F9 N9   &fm F10 MINUS  &fm F11 EQUAL
-// |  ESC            |  Q         |  W      |  E        |  R        |  T          |                                 |  Y         |  U        |  I             |  O   |   P   | BKSPC     |
-    &kp TAB        &hm LC(LSHFT) Q   &kp W     &kp E       &kp R       &kp T                                           &kp Y        &kp U       &kp I            &kp O       &kp P          &fm F12 LBKT
-// |  TAB            |  A         |  S      |  D        |  F        |  G          |                                 |  H         |  J        |  K             |  L   |   ;   |   '       |
-    &kp ESC             &hm LCTRL A  &kp S     &hm LSHFT D &hm LALT F  &kp G                                           &kp H        &hm LALT J  &hm RSHFT K      &kp L       &hm RCTRL SEMI &mt ESC SQT
-// | SHIFT           |  Z         |  X      |  C        |  V        |  B          |  MUTE       |  |                |  N         |  M        |  ,             |  .   |   /   | SHIFT     |
-    &mt LC(LALT)    &hm LC(LALT) Z   &kp X     &kp C       &kp V       &kp B          &kp C_MUTE        &kp C_MUTE     &kp N        &kp M       &kp COMMA        &kp DOT     &kp FSLH       &kp RSHFT
-//                                |  GUI    | ALT       | CTRL      | NUM         |  ENTER      |  | SPACE          | NAV        | CTRL      | ALT            | GUI  |
-                                     &kp LGUI  &kp LGUI    &kp ESC     &lt NUM SPACE  &mt LSHFT TAB     &lt NUM SPACE  &lt NAV BSPC &kp RALT    &lt EXTRA K_APP  &kp BSLH  
+// |   `        |    1         |  2        |  3        |  4        |  5          |                                 |  6           |  7        |  8             |  9        |   0           |              |
+    &hm N0 GRAVE     &fm F1 N1    &fm F2 N2   &fm F3 N3   &fm F4 N4   &fm F5 N5                                       &fm F6 N6      &fm F7 N7   &fm F8 N8        &fm F9 N9  &fm F10 MINUS   &fm F11 EQUAL
+// |  ESC       |    Q         |  W        |  E        |  R        |  T          |                                 |  Y           |  U        |  I             |  O        |   P           | BKSPC        |
+    &kp TAB      &hm LC(LSHFT) Q  &kp W       &kp E       &kp R       &kp T                                           &kp Y          &kp U       &kp I            &kp O      &kp P           &fm F12 LBKT
+// |  TAB       |    A         |  S        |  D        |  F        |  G          |                                 |  H           |  J        |  K             |  L        |   ;           |   '          |
+    &kp ESC        &hm LCTRL A    &kp S     &hm LSHFT D   &hm LALT F  &kp G                                           &kp H          &hm LALT J  &hm RSHFT K      &kp L      &hm RCTRL SEMI  &mt ESC SQT
+// | SHIFT      |    Z         |  X        |  C        |  V        |  B          |  MUTE       |  |                |  N           |  M        |  ,             |  .        |   /           | SHIFT        |
+    &kp LSHFT    &hm LC(LALT) Z   &kp X       &kp C       &kp V       &kp B         &kp C_MUTE      &kp C_MUTE        &kp N          &kp M       &kp COMMA        &kp DOT    &kp FSLH        &kp RSHFT
+//                                |  GUI   | ALT       | CTRL      |  NUM        |  ENTER      |  | SPACE          | NAV          | CTRL      | ALT            | GUI       |
+                          &kp LC(LA(LSHFT))  &kp LGUI   &kp TAB     &lt NUM ESC  &mt LSHFT SPACE    &lt NUM SPACE    &lt NAV BSPC   &kp RALT    &lt EXTRA K_APP  &kp BSLH  
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             >;
 
